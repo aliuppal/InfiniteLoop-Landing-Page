@@ -52,8 +52,11 @@ export async function sendContact(_prev: ContactState, formData: FormData): Prom
       }),
       cache: "no-store",
     });
-    const data = (await res.json().catch(() => null)) as { success?: string | boolean } | null;
-    if (!res.ok || String(data?.success) !== "true") throw new Error(`FormSubmit ${res.status}`);
+    const data = (await res.json().catch(() => null)) as { success?: string | boolean; message?: string } | null;
+    // e.g. "This form needs Activation..." until the inbox owner clicks FormSubmit's activation link.
+    if (!res.ok || String(data?.success) !== "true") {
+      throw new Error(`FormSubmit ${res.status}: ${data?.message ?? "no response body"}`);
+    }
   } catch (err) {
     console.error("Contact form send failed:", err);
     return { status: "error", message: "Couldn't send right now. Please try again in a minute.", fields };
