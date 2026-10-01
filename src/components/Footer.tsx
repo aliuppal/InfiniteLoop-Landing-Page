@@ -1,6 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { LogoMark } from "@/components/Logo";
-import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/site";
+import { SOCIAL_LINKS } from "@/lib/site";
 
 const COLUMNS = [
   { title: "Products", links: [["TaskFlow", "#products"], ["InvoiceAI", "#products"], ["DataSync", "#products"], ["Loop #4", "#products"]] },
@@ -39,13 +39,7 @@ export function Footer() {
           <h2 className="max-w-2xl font-heading text-4xl font-bold tracking-tighter text-paper md:text-6xl">
             Have a problem worth a product?
           </h2>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="group inline-flex items-center gap-2 self-start bg-neon px-6 py-4 font-heading font-bold text-night transition-colors hover:bg-paper md:self-auto"
-          >
-            {CONTACT_EMAIL}
-            <ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+          <ContactForm />
         </div>
 
         {/* Mega wordmark */}

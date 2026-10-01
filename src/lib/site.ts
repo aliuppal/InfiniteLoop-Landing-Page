@@ -1,5 +1,5 @@
-// Single place for links and contact details. Replace the placeholders before launch.
-export const CONTACT_EMAIL = "hello@infiniteloop.studio";
+// Single place for links. Replace the placeholders before launch.
+// Contact messages go through ContactForm; the recipient lives server-side in app/actions.ts.
 
 export const NAV_LINKS = [
   { label: "Products", href: "#products" },
