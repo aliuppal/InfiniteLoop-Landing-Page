@@ -73,6 +73,15 @@ const PROJECTS: Project[] = [
     image: "/work/gymlo.webp",
     span: "narrow",
   },
+  {
+    name: "Auto Ninja",
+    tag: "Car care",
+    tone: "cyan",
+    blurb: "Fuel logbook for your car: log every fill-up, track km/L and cost per km, and see your fuel card balance before it runs dry.",
+    url: "https://fuel-logbook.vercel.app/",
+    image: "/work/autoninja.webp",
+    span: "narrow",
+  },
 ];
 
 // Hover border colour per tone — literal class names so Tailwind can see them.
@@ -152,11 +161,11 @@ export function Projects() {
         <div>
           <Tag>Active projects</Tag>
           <h2 className="mt-6 max-w-2xl font-heading text-4xl font-bold tracking-tighter text-paper md:text-6xl">
-            Six live products. One in the lab.
+            Seven live products. One in the lab.
           </h2>
         </div>
         <p className="max-w-sm text-muted">
-          Every product here started as a two-week prototype. All six are live: click one and use it.
+          Every product here started as a two-week prototype. All seven are live: click one and use it.
         </p>
       </div>
 
@@ -166,10 +175,10 @@ export function Projects() {
         ))}
 
         {/* The next loop: an open slot that doubles as a pitch CTA. */}
-        <Reveal delay={0.12} className="md:col-span-1">
+        <Reveal delay={0.12} className="md:col-span-3">
           <a
             href="#contact"
-            className="group flex h-full flex-col justify-between gap-10 border border-dashed border-line p-6 transition-colors duration-200 hover:border-neon md:p-8"
+            className="group flex h-full flex-col justify-between gap-10 border border-dashed border-line p-6 transition-colors duration-200 hover:border-neon md:flex-row md:items-end md:p-8"
           >
             <div>
               <Tag tone="muted">In the lab</Tag>
@@ -182,7 +191,7 @@ export function Projects() {
                 workflow you&apos;d hand to an agent tomorrow? The best pitches become the next loop.
               </p>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-2 self-start border border-paper px-5 py-3 font-heading text-sm font-bold text-paper transition-colors group-hover:border-neon group-hover:bg-neon group-hover:text-night">
+            <span className="inline-flex shrink-0 items-center gap-2 self-start border border-paper md:self-auto px-5 py-3 font-heading text-sm font-bold text-paper transition-colors group-hover:border-neon group-hover:bg-neon group-hover:text-night">
               Pitch an idea <ArrowUpRight size={16} />
             </span>
           </a>
