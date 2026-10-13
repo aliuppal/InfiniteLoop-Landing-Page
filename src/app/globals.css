@@ -64,7 +64,58 @@ body {
   animation-play-state: paused;
 }
 
+/* Hero "software": a neon tube that flickers on, then hums.
+   The blur is painted once on an overlaid copy; only opacity animates. */
+.neon-word {
+  position: relative;
+  display: inline-block;
+  isolation: isolate; /* keeps the glow's z-index:-1 behind the letters, not behind the page */
+  text-shadow: 0 0 10px rgb(204 255 0 / 0.45);
+  animation: neon-flicker 1.8s linear 0.3s both;
+}
+.neon-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: transparent;
+  text-shadow:
+    0 0 18px rgb(204 255 0 / 0.9),
+    0 0 48px rgb(204 255 0 / 0.6),
+    0 0 110px rgb(204 255 0 / 0.35);
+  pointer-events: none;
+  opacity: 0.75;
+  animation: neon-hum 2.8s ease-in-out 2.1s infinite alternate;
+  will-change: opacity;
+}
+@keyframes neon-flicker {
+  0%   { opacity: 0.12; }
+  6%   { opacity: 1; }
+  9%   { opacity: 0.2; }
+  13%  { opacity: 1; }
+  30%  { opacity: 1; }
+  32%  { opacity: 0.35; }
+  35%  { opacity: 1; }
+  62%  { opacity: 1; }
+  64%  { opacity: 0.6; }
+  66%, 100% { opacity: 1; }
+}
+@keyframes neon-hum {
+  from { opacity: 0.55; }
+  to   { opacity: 1; }
+}
+
+/* Final period blinks like a text cursor: hard on/off, no fade. */
+.type-caret {
+  animation: caret-blink 1.06s steps(1, end) infinite;
+}
+@keyframes caret-blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ticker-track { animation: none; will-change: auto; }
+  .neon-word, .type-caret { animation: none; }
+  .neon-glow { animation: none; will-change: auto; opacity: 0.8; }
 }
