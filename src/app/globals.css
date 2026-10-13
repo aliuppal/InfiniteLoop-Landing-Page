@@ -57,6 +57,8 @@ body {
 }
 .ticker-track {
   animation: loop-marquee 40s linear infinite;
+  /* Always moving, so it earns a permanent compositor layer. */
+  will-change: transform;
 }
 .ticker:hover .ticker-track {
   animation-play-state: paused;
@@ -64,5 +66,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ticker-track { animation: none; }
+  .ticker-track { animation: none; will-change: auto; }
 }
