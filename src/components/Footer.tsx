@@ -3,7 +3,7 @@ import { LogoMark } from "@/components/Logo";
 import { SOCIAL_LINKS } from "@/lib/site";
 
 const COLUMNS = [
-  { title: "Products", links: [["TaskFlow", "#products"], ["InvoiceAI", "#products"], ["DataSync", "#products"], ["Loop #4", "#products"]] },
+  { title: "Products", links: [["Invoq", "#products"], ["FrontDesk AI", "#products"], ["CryptoQuant Pro", "#products"], ["TeckAuto", "#products"], ["TradeLog", "#products"], ["Gymlo", "#products"]] },
   { title: "Company", links: [["Studio", "#studio"], ["Process", "#process"], ["Careers", "#"], ["Contact", "#contact"]] },
   { title: "Resources", links: [["Blog", "#"], ["Manifesto", "#studio"], ["Changelog", "#"], ["Press kit", "#"]] },
   { title: "Legal", links: [["Privacy", "#"], ["Terms", "#"], ["Cookies", "#"]] },

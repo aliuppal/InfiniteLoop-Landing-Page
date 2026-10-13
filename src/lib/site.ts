@@ -6,7 +6,7 @@ export const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/aliuppal@gmail.com";
 
 export const NAV_LINKS = [
   { label: "Products", href: "#products" },
-  { label: "Our work", href: "#work" },
+  { label: "Our work", href: "#products" },
   { label: "Studio", href: "#studio" },
   { label: "Blog", href: "#" },
 ] as const;
