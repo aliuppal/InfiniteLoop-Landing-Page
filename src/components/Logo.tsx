@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // The "rings" mark from the brand file: two linked loops, paper + neon, reading as ∞.
 export function LogoMark({ className = "h-7 w-auto" }: { className?: string }) {
   return (
@@ -10,11 +12,11 @@ export function LogoMark({ className = "h-7 w-auto" }: { className?: string }) {
 
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2.5" aria-label="InfiniteLoop home">
+    <Link href="/" className="flex items-center gap-2.5" aria-label="InfiniteLoop home">
       <LogoMark />
       <span className="font-heading text-xl font-bold tracking-tighter text-paper">
         InfiniteLoop
       </span>
-    </a>
+    </Link>
   );
 }

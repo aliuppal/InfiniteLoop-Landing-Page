@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Process } from "@/components/Process";
 import { Projects } from "@/components/Projects";
+import { ServicesTeaser } from "@/components/ServicesTeaser";
 import { Studio } from "@/components/Studio";
 import { Ticker } from "@/components/Ticker";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Ticker />
         <Projects />
+        <ServicesTeaser />
         <Process />
         <Studio />
       </main>

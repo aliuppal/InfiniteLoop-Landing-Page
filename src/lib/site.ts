@@ -4,10 +4,12 @@
 // FormSubmit's random alias string to keep it out of the JS bundle too.
 export const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/aliuppal@gmail.com";
 
+// Section links are root-relative ("/#…") so they also work from /services.
 export const NAV_LINKS = [
-  { label: "Products", href: "#products" },
-  { label: "Our work", href: "#products" },
-  { label: "Studio", href: "#studio" },
+  { label: "Products", href: "/#products" },
+  { label: "Services", href: "/services" },
+  { label: "Our work", href: "/#products" },
+  { label: "Studio", href: "/#studio" },
   { label: "Blog", href: "#" },
 ] as const;
 

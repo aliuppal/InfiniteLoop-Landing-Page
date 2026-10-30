@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import { CONTACT_ENDPOINT } from "@/lib/site";
 
@@ -20,6 +20,18 @@ export function ContactForm() {
     dialogRef.current?.close();
     if (status === "success") setStatus("idle");
   };
+
+  // Any link to "#book-demo" (e.g. the Services page CTAs) opens this dialog directly.
+  useEffect(() => {
+    function openFromHash() {
+      if (window.location.hash !== "#book-demo") return;
+      dialogRef.current?.showModal();
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
 
   // FormSubmit blocks server-to-server requests (Cloudflare 403), so the browser posts directly.
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
